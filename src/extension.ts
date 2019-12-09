@@ -10,8 +10,10 @@ export function activate(context: vscode.ExtensionContext) {
 			value: '',
 			placeHolder: 'Provide a name for the module'
 		});
-		if (moduleName) {
+		if (moduleName && params) {
 			create(moduleName, params.fsPath);
+		}else{
+			vscode.window.showWarningMessage("Can't add module");
 		}
 	});
 }

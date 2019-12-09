@@ -1,5 +1,7 @@
 import * as fs from 'fs';
+import * as vscode from 'vscode';
 import { camelCase, startCase } from 'lodash';
+import { window } from 'vscode';
 
 export default async (moduleName: string, fsPath: string) => {
     if (moduleName) {
@@ -19,14 +21,20 @@ export default async (moduleName: string, fsPath: string) => {
                 fs.writeFile(`${modulePath}/tests/${moduleName}.spec.ts`, getUnitTest(moduleName), () => { });
             });
         }
+    } else {
+        window.showWarningMessage("Provide a valid module name");
     }
 }
 
 function normalizeName(moduleName: string) {
-    if (moduleName.endsWith('-module')) {
-        return moduleName;
+    if (vscode.workspace.getConfiguration().get('conf.resource.addModuleToName')) {
+        if (moduleName.endsWith('-module')) {
+            return moduleName;
+        } else {
+            return `${moduleName}-module`;
+        }
     } else {
-        return `${moduleName}-module`;
+        return moduleName;
     }
 }
 

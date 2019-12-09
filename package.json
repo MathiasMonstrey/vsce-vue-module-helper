@@ -4,7 +4,7 @@
   "publisher": "mathiasm",
   "license": "MIT",
   "description": "",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "repository": {
     "type": "git",
     "url": "https://github.com/MathiasMonstrey/vsce-vue-module-helper"
@@ -21,6 +21,19 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "configuration": [
+      {
+        "title": "Vue module helper",
+        "properties": {
+          "conf.resource.addModuleToName": {
+            "type": "boolean",
+            "default": true,
+            "description": "Auto add '-module' to name",
+            "scope": "resource"
+          }
+        }
+      }
+    ],
     "commands": [
       {
         "command": "extension.create",
