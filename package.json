@@ -4,7 +4,7 @@
   "publisher": "mathiasm",
   "license": "MIT",
   "description": "",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/MathiasMonstrey/vsce-vue-module-helper"
@@ -30,7 +30,7 @@
     "menus": {
       "explorer/context": [
         {
-          "when": "explorerResourceIsFolder && createIsActive && resource =~ /.*\/src/.*",
+          "when": "explorerResourceIsFolder && createIsActive && resource =~ /.*/src/.*",
           "command": "extension.create"
         }
       ]
