@@ -1,0 +1,11 @@
+import { RouteConfig } from 'vue-router';
+
+export const {pascalCasedName}: RouteConfig = {
+    path: '/{name}',
+	name: '{name}',
+	component: () => import('./{name}'),
+}
+
+export default [
+    {pascalCasedName},
+] as RouteConfig[];

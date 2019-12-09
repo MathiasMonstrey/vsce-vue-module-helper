@@ -25,26 +25,33 @@
       {
         "title": "Vue module helper",
         "properties": {
-          "conf.resource.addModuleToName": {
+          "vmh.addModuleToName": {
             "type": "boolean",
             "default": true,
-            "description": "Auto add '-module' to name",
-            "scope": "resource"
+            "description": "Auto add '-module' to name"
           }
         }
       }
     ],
     "commands": [
       {
-        "command": "extension.create",
+        "command": "vmh.addModule",
         "title": "Add module"
+      },
+      {
+        "command": "vmh.addComponent",
+        "title": "Add component"
       }
     ],
     "menus": {
       "explorer/context": [
         {
           "when": "explorerResourceIsFolder && createIsActive && resource =~ /.*/src/.*",
-          "command": "extension.create"
+          "command": "vmh.addModule"
+        },
+        {
+          "when": "explorerResourceIsFolder && createIsActive && resource =~ /.*/src/.*",
+          "command": "vmh.addComponent"
         }
       ]
     }

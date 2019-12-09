@@ -1,0 +1,20 @@
+import { shallowMount, createLocalVue, Wrapper } from '@vue/test-utils';
+import {pascalCasedName} from '../{name}';
+import WebComponents from '@/plugins/webComponents';
+
+describe('{pascalCasedName}', () => {
+	const localVue = createLocalVue();
+	localVue.use(WebComponents);
+
+	let wrapper: Wrapper<{pascalCasedName}>;
+	beforeEach(() => {
+		wrapper = shallowMount({pascalCasedName}, {
+			propsData: {},
+			localVue,
+		});
+	});
+
+	it('Test written for {name}', () => {
+		throw new Error('No test written');
+	});
+});

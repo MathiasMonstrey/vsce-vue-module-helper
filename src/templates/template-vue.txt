@@ -1,0 +1,9 @@
+<template src="./{name}.html">
+</template>
+
+<script lang="ts" src="./{name}.ts">
+</script>
+
+<style lang="scss">
+@import "./{name}.scss";
+</style>
