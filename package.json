@@ -16,10 +16,10 @@
     "Other"
   ],
   "activationEvents": [
-    "workspaceContains:**/src/base-module",
-    "workspaceContains:**/src/app"
+    "workspaceContains:**/src/base-module/",
+    "workspaceContains:**/src/app/"
   ],
-  "main": "./dist/extension.js",
+  "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
@@ -30,20 +30,18 @@
     "menus": {
       "explorer/context": [
         {
-          "when": "explorerResourceIsFolder",
+          "when": "explorerResourceIsFolder && createIsActive && resource =~ /.*\/src/.*",
           "command": "extension.create"
         }
       ]
     }
   },
   "scripts": {
-    "vscode:prepublish": "webpack --mode production",
+    "vscode:prepublish": "yarn run compile",
     "compile": "tsc -p ./",
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile",
-    "test": "node ./out/test/runTest.js",
-    "webpack": "webpack --mode development",
-    "webpack-dev": "webpack --mode development --watch"
+    "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
     "@types/glob": "^7.1.1",
@@ -55,9 +53,7 @@
     "ts-loader": "^6.2.1",
     "tslint": "^5.20.0",
     "typescript": "^3.6.4",
-    "vscode-test": "^1.2.2",
-    "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.10"
+    "vscode-test": "^1.2.2"
   },
   "dependencies": {
     "@types/lodash": "^4.14.149",

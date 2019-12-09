@@ -2,7 +2,9 @@ import * as vscode from 'vscode';
 import create from './commands/create';
 
 export function activate(context: vscode.ExtensionContext) {
-	console.log('Congratulations, your extension "vue-module-helper" is now active! wuuut');
+
+	vscode.commands.executeCommand('setContext', 'createIsActive', true);
+
 	vscode.commands.registerCommand('extension.create', async (params) => {
 		const moduleName = await vscode.window.showInputBox({
 			value: '',
