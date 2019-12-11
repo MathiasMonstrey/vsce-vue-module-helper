@@ -4,7 +4,7 @@
   "publisher": "mathiasm",
   "license": "MIT",
   "description": "",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "repository": {
     "type": "git",
     "url": "https://github.com/MathiasMonstrey/vsce-vue-module-helper"
@@ -58,7 +58,7 @@
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
-    "compile": "tsc -p ./",
+    "compile": "tsc -p ./ && xcopy \"src/templates/*\" \"out/templates/\" /F /Y",
     "watch": "tsc -watch -p ./",
     "pretest": "yarn run compile",
     "test": "node ./out/test/runTest.js"
