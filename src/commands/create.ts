@@ -58,7 +58,7 @@ function writeTemplate(template: Promise<string>, name: string, extension: strin
 
 function readFile(filename: string, context: vscode.ExtensionContext): Promise<string> {
     return new Promise((resolve, reject) => {
-        fs.readFile(vscode.Uri.file(path.join(context.extensionPath, 'src', 'templates', filename)).fsPath, 'utf8', (err, data) => {
+        fs.readFile(vscode.Uri.file(path.join(context.extensionPath, 'out', 'templates', filename)).fsPath, 'utf8', (err, data) => {
             err ? reject(err) : resolve(data)
         });
     });
