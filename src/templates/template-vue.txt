@@ -1,0 +1,9 @@
+<template>
+  <div>{name} created!</div>
+</template>
+
+<script lang="ts" src="./{name}.ts"></script>
+
+<style lang="scss">
+@import "./{name}.scss";
+</style>

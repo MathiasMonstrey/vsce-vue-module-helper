@@ -1,12 +1,12 @@
 import { ComponentPublicInstance } from "@vue/runtime-core";
 import { shallowMount, VueWrapper } from "@vue/test-utils";
-import { pascalCasedName } from "../{name}";
+import {pascalCasedName} from "../{name}";
 
 describe("{pascalCasedName}", () => {
   let wrapper: VueWrapper<ComponentPublicInstance>;
   beforeEach(() => {
     wrapper = shallowMount(
-      { pascalCasedName },
+      {pascalCasedName},
       {
         propsData: {}
       }

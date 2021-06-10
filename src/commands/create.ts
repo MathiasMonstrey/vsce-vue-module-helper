@@ -17,7 +17,6 @@ export default async (context: vscode.ExtensionContext, name: string, fsPath: st
         if (fs.existsSync(path)) {
             writeTemplate(replaceValues(readFile('template-vue.txt', context), dictGen(name)), name, 'vue', path);
             writeTemplate(replaceValues(readFile('template-ts.txt', context), dictGen(name)), name, 'ts', path);
-            writeTemplate(replaceValues(readFile('template-html.txt', context), dictGen(name)), name, 'html', path);
             writeTemplate(Promise.resolve(''), name, 'scss', path);
             if (module) {
                 writeTemplate(replaceValues(readFile('template-route.txt', context), dictGen(name)), `${name}-routes`, 'ts', path);
