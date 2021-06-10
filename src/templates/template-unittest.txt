@@ -1,20 +1,19 @@
-import { shallowMount, createLocalVue, Wrapper } from '@vue/test-utils';
-import {pascalCasedName} from '../{name}';
-import WebComponents from '@/plugins/webComponents';
+import { ComponentPublicInstance } from "@vue/runtime-core";
+import { shallowMount, VueWrapper } from "@vue/test-utils";
+import { pascalCasedName } from "../{name}";
 
-describe('{pascalCasedName}', () => {
-	const localVue = createLocalVue();
-	localVue.use(WebComponents);
+describe("{pascalCasedName}", () => {
+  let wrapper: VueWrapper<ComponentPublicInstance>;
+  beforeEach(() => {
+    wrapper = shallowMount(
+      { pascalCasedName },
+      {
+        propsData: {}
+      }
+    );
+  });
 
-	let wrapper: Wrapper<{pascalCasedName}>;
-	beforeEach(() => {
-		wrapper = shallowMount({pascalCasedName}, {
-			propsData: {},
-			localVue,
-		});
-	});
-
-	it('Test written for {name}', () => {
-		throw new Error('No test written');
-	});
+  it("Test written for {name}", () => {
+    throw new Error("No test written");
+  });
 });

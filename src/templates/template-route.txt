@@ -1,11 +1,9 @@
-import { RouteConfig } from 'vue-router';
+import { RouteRecordRaw } from "vue-router";
 
-export const {pascalCasedName}: RouteConfig = {
-    path: '/{name}',
-	name: '{name}',
-	component: () => import('./{name}'),
-}
+export const { pascalCasedName }: RouteRecordRaw = {
+  path: "/{name}",
+  name: "{name}",
+  component: () => import("./{name}")
+};
 
-export default [
-    {pascalCasedName},
-] as RouteConfig[];
+export default [{ pascalCasedName }] as RouteRecordRaw[];

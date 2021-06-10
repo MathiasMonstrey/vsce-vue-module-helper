@@ -8,7 +8,7 @@ export default async (context: vscode.ExtensionContext, name: string, fsPath: st
     if (name) {
         const normalizedName = normalizeName(name, module);
         const path = `${fsPath}/${normalizedName}`;
-        const testPath = `${path}/tests/`;
+        const testPath = `${path}/__tests__/`;
 
         if (!fs.existsSync(path)) {
             fs.mkdirSync(path);

@@ -1,6 +1,10 @@
-import { Component, Prop, Vue } from 'vue-property-decorator';
+import { defineComponent } from "@vue/runtime-core";
 
-@Component
-export default class {pascalCasedName} extends Vue {
-
-}
+export default defineComponent({
+  name: "{name}",
+  components: {},
+  props: {},
+  setup(props) {
+    return {};
+  }
+});
